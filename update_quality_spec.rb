@@ -2,6 +2,10 @@ require 'rspec'
 require 'update_quality'
 
 describe '#update_quality' do
+=begin
+Removed pending status from Blue Star award.
+Added 
+=end
 
   context 'Given a single award' do
     let(:initial_expires_in) { 5 }
@@ -177,7 +181,6 @@ describe '#update_quality' do
       end
 
       context 'given a Blue Star award' do
-        before { pending }
         let(:name) { 'Blue Star' }
         before { award.expires_in.should == initial_expires_in-1 }
 
