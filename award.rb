@@ -7,7 +7,7 @@ to further modify this file.
 	attr_accessor :name, :expires_in, :quality
 	
 	def initialize(name, expires_in, quality)
-	# Method to intitialize the instance variables to be passed into the class
+	# Method to initialize the instance variables to be passed into the class
 		@name = name
 		@expires_in = expires_in
 		@quality = quality
