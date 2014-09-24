@@ -35,13 +35,13 @@ to further modify this file.
 	# Utilized case to properly select award by name
 		case name
 		when "NORMAL ITEM"
-			has_expired ? -2 : -1
+			has_expired? ? -2 : -1
 		when "Blue First"
-			has_expired ? 2 : 1
+			has_expired? ? 2 : 1
 		when "Blue Distinction Plus"
 			0
 		when "Blue Compare"
-			if has_expired
+			if has_expired?
 				-1 * quality
 			elseif expires_in > 10
 				1
@@ -51,7 +51,7 @@ to further modify this file.
 				3
 			end
 		when "Blue Star"
-			has_expired ? -4 : -2
+			has_expired? ? -4 : -2
 		end
 	end
 end
