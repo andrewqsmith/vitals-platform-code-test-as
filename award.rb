@@ -12,6 +12,10 @@ to further modify this file.
 		@expires_in = expires_in
 		@quality = quality
 	end
+
+	def has_expired?
+		expires_in <= 0
+	end
 	
 	def award_update!
 	# Method utilized in updating the awards according to the assigned quality and name of award
@@ -31,13 +35,13 @@ to further modify this file.
 	# Utilized case to properly select award by name
 		case name
 		when "NORMAL ITEM"
-			expired? ? -2 : -1
+			has_expired ? -2 : -1
 		when "Blue First"
-			expired? ? 2 : 1
+			has_expired ? 2 : 1
 		when "Blue Distinction Plus"
 			0
 		when "Blue Compare"
-			if expired?
+			if has_expired
 				-1 * quality
 			elseif expires_in > 10
 				1
@@ -47,7 +51,7 @@ to further modify this file.
 				3
 			end
 		when "Blue Star"
-			expired? ? -4 : -2
+			has_expired ? -4 : -2
 		end
 	end
 end
